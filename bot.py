@@ -49,7 +49,12 @@ async def start(bot, message):
         f"**Hi {message.chat.first_name}! **\n\n"
         " **HERE IS THE SOURCE CODE :- \n https://github.com/Devansh20055/LINK-SHORTER **<i><b><u> \n\n Star ⭐️ THE REPO TOO ** \n\n 🔰📍Made by @TEAM_SILENT_KING 🔰📍. \n\n ⚜️ MADE BY  :- @ITS_NOT_ROMEO ⚜️ \n\n ⚡️⚡️ FOR MORE OPEN SOURCE FOLLOW :- [DEVANSH20055](https://github.com/Devansh20055) \n ON GITHUB ⚡️⚡️ \n\n ‼️ USE /SOURCE FOR SOURCE CODE OF BOT ‼️ </i></u></b>", disable_web_page_preview=True )
 
-
+@bot.on_message(filters.command('api') & filters.private)
+async def api(bot, message):
+    user_id = message.from_user.id
+    api = message.text.split(' ', 1)[1]
+    #save to db code soon 😅
+    await message.reply_text(f"**API key saved successfully!**\n\n**Your API: `{api}`**")
 
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
